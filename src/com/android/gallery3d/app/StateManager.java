@@ -63,9 +63,8 @@ public class StateManager {
             if (mIsResumed) top.onPause();
         }
         state.initialize(mActivity, data);
-<<<<<<< HEAD
 
-        mStack.push(new StateEntry(data, state));
+         mStack.push(new StateEntry(data, state));
         state.onCreate(data, null);
         if (mIsResumed) state.resume();
     }
@@ -84,8 +83,6 @@ public class StateManager {
             if (mIsResumed) top.onPause();
         }
         state.initialize(mActivity, data);
-=======
->>>>>>> afc12ed92f9d9475af35740fea4d1b14cd41aa1f
 
         mStack.push(new StateEntry(data, state));
         state.onCreate(data, null);
