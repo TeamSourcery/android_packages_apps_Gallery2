@@ -63,6 +63,29 @@ public class StateManager {
             if (mIsResumed) top.onPause();
         }
         state.initialize(mActivity, data);
+<<<<<<< HEAD
+
+        mStack.push(new StateEntry(data, state));
+        state.onCreate(data, null);
+        if (mIsResumed) state.resume();
+    }
+
+    //Starts state without 'transitionOnNextPause'
+    public void startStateNow(Class<? extends ActivityState> klass, Bundle data) {
+        Log.v(TAG, "startStateNow " + klass);
+        ActivityState state = null;
+        try {
+            state = klass.newInstance();
+        } catch (Exception e) {
+            throw new AssertionError(e);
+        }
+        if (!mStack.isEmpty()) {
+            ActivityState top = getTopState();
+            if (mIsResumed) top.onPause();
+        }
+        state.initialize(mActivity, data);
+=======
+>>>>>>> afc12ed92f9d9475af35740fea4d1b14cd41aa1f
 
         mStack.push(new StateEntry(data, state));
         state.onCreate(data, null);
